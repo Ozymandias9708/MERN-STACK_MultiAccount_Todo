@@ -5,6 +5,7 @@
 
 #body{
   background: url(./components/TODO/todocomponents/login-back.jpg) ;
+  background-image: linear-gradient(black,white);
   background-repeat: no-repeat;
   background-size: cover;
 }
