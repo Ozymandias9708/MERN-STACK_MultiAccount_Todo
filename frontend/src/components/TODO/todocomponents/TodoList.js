@@ -102,7 +102,7 @@ function TodoList({user,setLoginUser}) {
     console.log(user);
     
     console.log(todos);
-     axios.post("http://localhost:9002/update", user)
+     axios.post("https://yourtodo-xgte.onrender.com/update", user)
      .then(res => {
       alert(res.data.message)
       setLoginUser({})
