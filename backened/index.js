@@ -1,32 +1,16 @@
+import dotenv from 'dotenv'
+dotenv.config()
 import express from "express"
 import cors from "cors"
 import mongoose from "mongoose"
-// import multer from "multer";
 
-
-// const middleWare=multer({dest:"uploads"}); 
-
-// export default middleWare;
-// DBConnection
-
-// const DBConnection=async()=>{
-//     const MONGODB_URI=`mongodb+srv://shubham9905374230:DatabaseForFileSharingApp%409708@databaseforfilesharinga.fh4dbbj.mongodb.net/`;
-//     try {
-//         await mongoose.connect(MONGODB_URI,{useNewUrlParser:true,    useUnifiedTopology: true});
-//         console.log("Succcesfully Connected to MongoDB");
-//     } catch (error) {
-//         console.log("Not Connected to MongoDB", error.message);
-//     }
-// }
-
-// export  DBConnection;
 
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded())
 app.use(cors())
 
-mongoose.connect(`mongodb+srv://shubham9905374230:DatabaseForFileSharingApp%409708@databaseforfilesharinga.fh4dbbj.mongodb.net/`, {
+mongoose.connect(`mongodb+srv://${process.env.DATABASE}@databaseforfilesharinga.fh4dbbj.mongodb.net/`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, () => {
@@ -84,26 +68,7 @@ app.post("/register", (req, res)=> {
     
 }) 
 
-// db.collection.updateOne(
-//     <filter>,
-//     <update>,
-//     {
-//       upsert: <boolean>,
-//       writeConcern: <document>,
-//       collation: <document>,
-//       arrayFilters: [ <filterdocument1>, ... ],
-//       hint:  <document|string>        // Available starting in MongoDB 4.2.1
-//     }
-//  )
 
-
-// const todo = await Todo.findById(req.params.id);
-
-// 	todo.text = req.body.text;
-
-// 	todo.save();
-
-// 	res.json(todo);
 
 app.post("/update", async(req, res)=> {
     console.log("update");
@@ -123,16 +88,11 @@ app.post("/update", async(req, res)=> {
             res.send( { message: "Saved and Loged Out" })
         }
     })
-    // res.json(todo);
+ 
 }) 
-// const {name, email, password, todos} = req.body
-//     console.log("inAPI");
-//     console.log(name);
-//     console.log(todos);
-//     User.updateOne({ email: email},{
-//         $set: { todos: todos}
-//     })
 
-app.listen(9002,() => {
+const PORT=process.env.PORT || 9002
+
+app.listen(PORT,() => {
     console.log("BE started at port 9002")
 })
