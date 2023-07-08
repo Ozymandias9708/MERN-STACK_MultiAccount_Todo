@@ -46,7 +46,7 @@ app.post("/register", (req, res)=> {
     // console.log("api me req");
     const { name, email, password,reEnterPassword,todos} = req.body
     User.findOne({email: email}, (err, user) => {
-        console.log("found user");
+        // console.log("found user");
         if(user){
             res.send({message: "User already registerd"})
         } else {
@@ -71,14 +71,14 @@ app.post("/register", (req, res)=> {
 
 
 app.post("/update", async(req, res)=> {
-    console.log("update");
+    // console.log("update");
     // console.log(req.body);
     
 
     const {name, email, password, todos} = req.body
     const todo=await User.findById(req.body._id);
-    console.log(req.params.Id);
-    console.log("todo");
+    // console.log(req.params.Id);
+    // console.log("todo");
     // console.log(todo);
     todo.todos=todos;
     todo.save(err => {
@@ -94,5 +94,5 @@ app.post("/update", async(req, res)=> {
 const PORT=process.env.PORT || 9002
 
 app.listen(PORT,() => {
-    console.log("BE started at port 9002")
+    console.log("BE started at PORT")
 })

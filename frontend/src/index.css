@@ -4,8 +4,8 @@
 }
 
 #body{
-  background: url(./components/TODO/todocomponents/login-back.jpg) ;
-  background-image: linear-gradient(black,white);
+  /* background: url(./components/TODO/todocomponents/login-back.jpg) ; */
+  background-image: linear-gradient(rgb(7, 4, 95),rgb(203, 203, 219)) ;
   background-repeat: no-repeat;
   background-size: cover;
 }

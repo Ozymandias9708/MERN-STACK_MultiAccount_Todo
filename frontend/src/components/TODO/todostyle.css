@@ -3,13 +3,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: sans-serif;
 }
 
 .great h1{
-  color: black !important;
+  color: rgba(207, 224, 229, 0.675) !important;
   text-decoration: underline;
+  text-shadow: 0 0px 5px black;
+  /* font-size: xx-large; */
+  /* text-decoration; */
   
   /* font-size: ; */
 }
@@ -27,8 +29,45 @@
   position: -ms-page;
   border-radius: 12px;
   padding: 10px;
-  background-image: linear-gradient(to right,rgb(8, 149, 210),rgb(216, 46, 216));
+  border: 2px solid white;
+  color:white;
+
+  background-image: linear-gradient(to right,rgb(8, 149, 210),rgb(52, 10, 135));
   /* left: 1vw; */
+}
+
+.logOut:hover{
+  border: 2px solid black;
+
+}
+
+.todo-button {
+  padding: 1rem;
+
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  outline: none;
+
+  background-image: linear-gradient(to right,rgb(8, 149, 210),rgb(37, 9, 164));  color: white;
+  border: 2px solid black;
+  text-transform: capitalize;
+  width: 6rem;
+  border: 2px solid white;
+  text-align: center !important;
+
+
+}
+
+#editt{
+    position: relative;
+    left: -39px;
+}
+
+
+
+.todo-button:hover{
+  border: 2px solid black;
+
 }
 
 :root {
@@ -40,21 +79,18 @@
   --body-bg: hsl(240, 5%, 9%);
   --todo-bg: hsl(235, 24%, 19%);
   /* --todo-font: hsl(234, 39%, 85%); */
-  --todo-font-hover: hsl(236, 33%, 92%);
+  --todo-font-hover: hsl(235, 32%, 92%);
   --placeholder: hsl(233, 8%, 78%);
   --todo-font: hsl(233, 33%, 81%);
-  --header-bg: url("./images/bg-desktop-dark.jpg");
   --check-icon: url("./images/icon-check.svg");
 }
 
 .light-theme {
   --body-bg: hsl(230, 2%, 52%);
-  --todo-bg: hsl(0, 2%, 71%);
-  --todo-font: hsl(235, 19%, 35%);
+  --todo-bg: hsl(153, 36%, 95%);
+  --todo-font: hsl(240, 5%, 4%);
   --todo-font-hover: hsl(237, 14%, 26%);
-  --placeholder: hsl(236, 9%, 61%);
-  --header-bg: url("./images/bg-desktop-light.jpg");
-  /* --Very-Light-Grayish-Blue: hsl(236, 33%, 92%); */
+  --placeholder: hsl(220, 10%, 6%);
   --check-icon: url("./images/icon-check-light.svg");
 }
 
@@ -88,10 +124,10 @@ header {
   margin: auto;
 }
 
-h1 {
+h1,h2 {
   color: white;
   letter-spacing: 0.5rem;
-  font-size: 2.5rem;
+  font-size: 2.0rem;
 }
 .head-container {
   display: flex;
@@ -122,25 +158,17 @@ h1 {
   background: var(--todo-bg);
   color: var(--todo-font);
   height: 100%;
+    border: 1px solid white;
+
 }
 
 .todo-input::placeholder {
   color: var(--placeholder);
+    /* border: 1px solid white; */
+
 }
 
-.todo-button {
-  padding: 1rem;
-  border: none;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
-  outline: none;
-  /* background: var(--bg-gradient); */
 
-  background-image: linear-gradient(to right,rgb(8, 149, 210),rgb(216, 46, 216));  color: white;
-  border: 2px solid black;
-  text-transform: capitalize;
-  width: 6rem;
-}
 
 .todo-container {
   display: flex;
@@ -206,6 +234,11 @@ h1 {
   padding-right: 80px;
   width: 100%;
 }
+.todo-row:hover .i-check {
+  border-image: var(--bg-gradient);
+  border-image-slice: 1;
+}
+
 .complete .i-check,
 .complete .i-check:hover {
   border-image: var(--bg-gradient);
@@ -213,16 +246,13 @@ h1 {
   background: transparent;
   background: var(--check-icon) center no-repeat;
 }
-.todo-row:hover .i-check {
-  border-image: var(--bg-gradient);
-  border-image-slice: 1;
-}
 
 .todo-list {
   padding-left: 2rem;
   padding-right: 2rem;
   overflow-x: hidden;
   overflow-y: scroll;
+  /* border: 1px solid white; */
 }
 .todo-list::-webkit-scrollbar {
   display: none;
@@ -235,6 +265,8 @@ h1 {
 }
 .todo-row {
   position: relative;
+    border: 1px solid white;
+
 }
 .i-edit:hover,
 .i-cross:hover {

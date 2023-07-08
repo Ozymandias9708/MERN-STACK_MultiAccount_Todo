@@ -1,9 +1,11 @@
 import React, { useState } from "react"
+import ReactDOM from 'react-dom';
 import "./register.css"
 import axios from "axios"
 import { useHistory } from "react-router-dom"
 
 const Register = () => {
+  
 
     const history = useHistory()
 
@@ -39,7 +41,7 @@ const Register = () => {
 
     return (
         <div className="register">
-            {console.log("User", user)}
+
             <h1>Register</h1>
             <input type="text" name="name" value={user.name} placeholder="Your Name" onChange={ handleChange }></input>
             <input type="text" name="email" value={user.email} placeholder="Your Email" onChange={ handleChange }></input>
