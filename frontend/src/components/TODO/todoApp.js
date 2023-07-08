@@ -5,7 +5,7 @@ import TodoList from "./todocomponents/TodoList";
 function TodoApp({user,setLoginUser,body}) {
   // body.style.background-color=black;
   // body.style={{backgroundColor:yellow}}
-  body.style.background="url(https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?w=2000)"
+  body.style.background="url(/a.jpg)"
   body.style.backgroundRepeat="No-Repeat"
   body.style.backgroundSize="cover"
   
