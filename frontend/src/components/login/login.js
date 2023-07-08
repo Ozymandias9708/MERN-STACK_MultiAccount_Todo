@@ -21,7 +21,7 @@ const Login = ({ setLoginUser}) => {
     }
 
     const login = () => {
-        axios.post("https://yourtodo-xgte.onrender.com/login", user1)
+        axios.post(`${REACT_APP_BASE_URL}/login`, user1)
         .then(res => {
             alert(res.data.message)
             setLoginUser(res.data.user)
