@@ -21,7 +21,7 @@ const Login = ({ setLoginUser}) => {
     }
 
     const login = () => {
-        axios.post(`${REACT_APP_BASE_URL}/login`, user1)
+        axios.post(`${process.env.REACT_APP_BASE_URL}/login`, user1)
         .then(res => {
             alert(res.data.message)
             setLoginUser(res.data.user)

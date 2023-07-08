@@ -28,7 +28,7 @@ const Register = () => {
     const register = () => {
         const { name, email, password, reEnterPassword } = user
         if( name && email && password && (password === reEnterPassword)){
-            axios.post(`${REACT_APP_BASE_URL}/register`, user)
+            axios.post(`${process.env.REACT_APP_BASE_URL}/register`, user)
             .then( res => {
                 alert(res.data.message)
                 history.push("/login")

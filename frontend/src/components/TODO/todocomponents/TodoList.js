@@ -94,7 +94,7 @@ function TodoList({ user, setLoginUser }) {
     // console.log(user);
 
     // console.log(todos);
-    axios.post(`${REACT_APP_BASE_URL}/update`, user)
+    axios.post(`${process.env.REACT_APP_BASE_URL}/update`, user)
       .then(res => {
         alert(res.data.message)
         setLoginUser({})
